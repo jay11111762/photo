@@ -7,7 +7,7 @@
 - Editorial: 96장 — 서비스·브랜드 이야기 본문
 - Archive: 19장 — 행사 기록·연혁·뉴스
 
-`index.html`을 열면 용도·장면·행사명으로 검색하고 보정 전후를 비교할 수 있습니다. 사진을 누르면 각 컷의 선정 이유와 크롭 가이드가 표시됩니다.
+[온라인 갤러리](https://jay11111762.github.io/photo/)에서, 또는 `index.html`을 열면 용도·장면·행사명으로 검색하고 보정 전후를 비교할 수 있습니다. 사진을 누르면 각 컷의 선정 이유와 크롭 가이드가 표시됩니다.
 
 `assets/master/`: sRGB JPG, 긴 변 최대 4096px, 원본 비율 유지. 작은 원본은 확대하지 않습니다.
 
@@ -31,6 +31,12 @@
 
 ## Rebuild
 
-Python 3.12 / Pillow / numpy / pillow-heif. `tools/rebuild.py`에 원본 루트와 별도 출력 디렉터리를 지정하면 manifest의 보정값으로 다시 출력합니다. 원본 SHA-256을 검사합니다. HDR/RAW 현상과 인쇄용 CMYK 분판은 별도 작업이며 이 패키지는 화면용 sRGB입니다.
+Python 3.12 / Pillow / numpy / pillow-heif. `python -m pip install -r tools/requirements.txt`로 의존성을 설치합니다. `tools/rebuild.py`에 원본 루트와 별도 출력 디렉터리를 지정하면 manifest의 보정값으로 다시 출력합니다. 원본 SHA-256을 검사합니다. HDR/RAW 현상과 인쇄용 CMYK 분판은 별도 작업이며 이 패키지는 화면용 sRGB입니다.
 
 사진의 공개 게시 여부와 별개로 사진 사용 권한은 원 권리자의 조건을 따릅니다. 이 저장소는 사진의 오픈 라이선스를 부여하지 않습니다.
+
+## Asset URLs
+
+웹에서 바로 사용할 경로 예시: `https://jay11111762.github.io/photo/assets/web/foreedom-p00528.webp`
+
+전체 경로·선정 이유·크롭 지침은 [manifest.json](manifest.json)에서 확인합니다. 라이브러리의 상대 경로에 갤러리 URL을 붙이면 됩니다.
